@@ -24,6 +24,3 @@ client.on('interactionCreate', async interaction => {
 
 client.login(token);
 
-
-// Bot token: OTIwMTQ3NDkyMjExOTE2ODUx.YbgIIQ.UUzN7P9rT1EKjnExHO2PiEcFiFY
-// Invite link: https://discord.com/oauth2/authorize?client_id=920147492211916851&permissions=8&scope=bot%20applications.commands
