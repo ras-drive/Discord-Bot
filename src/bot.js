@@ -1,14 +1,8 @@
 const fs = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('../config.json');
-
-
 const logger = require('./utils/logger');
 
-logger.log({
-    message: 'test',
-    level: 'error'
-});
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
@@ -34,8 +28,10 @@ client.on('interactionCreate', async interaction => {
     
     try {
         await command.execute(interaction);
-    } catch (error) {
-        console.error(error);
+    } catch (e) {
+        console.error(e + '\nAn error has occurred while executing the command and has been inserted into the logs.');
+        logger.error(e.stack);
+        logger.info(`Error executing command: ${interaction.commandName}`);
         await interaction.reply({ content: 'There was an error while executing the command!', ephemeral: true});
     }
 });

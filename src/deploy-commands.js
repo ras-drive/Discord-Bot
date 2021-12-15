@@ -2,6 +2,7 @@ const fs = require('fs');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { clientId, guildId, token } = require('../config.json')
+const logger = require('./utils/logger');
 
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -15,4 +16,6 @@ const rest = new REST({ version: '9' }).setToken(token);
 
 rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
     .then(() => console.log('Application commands registered!'))
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => console.error('Your config may be set up wrong.'),
+                    logger.error('Make sure your guild token and client token are in config.json'));
