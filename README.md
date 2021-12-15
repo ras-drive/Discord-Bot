@@ -7,15 +7,8 @@ as time goes on.
 
 ## Steps for running
 
-create a config.json file in the root directory.
-the format should look like this...
-```
-{
-    "clientId": "YOUR-CLIENT_ID",
-    "guildId": "YOUR-GUILD_ID",
-    "token" : "YOUR-TOKEN-HERE"
-}
-```
+run ```$ npm run setup``` and follow the steps to setup the bot.
 
 then you can just open a terminal, make sure you are running Node.js version 16 or above.
-run ```$ npm install``` to fetch dependencies, and use ```$ npm run start``` to run the bot.
+Don't forget to run ```$ npm install``` to fetch dependencies, and use ```$ npm run start``` 
+to run the bot.
