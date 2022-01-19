@@ -1,4 +1,2 @@
 node_modules/
-config.json
-src/logs/server.log
-src/logs/error.log
+.env
