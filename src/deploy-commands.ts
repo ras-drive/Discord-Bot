@@ -2,8 +2,9 @@ import EnvLoader from './EnvLoader'
 import fs from 'fs'
 import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v9'
+import { Choices } from './util/EnvChoices'
 
-EnvLoader.load()
+EnvLoader.load(Choices.BOT)
 
 const commands = []
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.ts'))

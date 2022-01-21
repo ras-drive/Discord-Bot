@@ -3,8 +3,9 @@ import EnvLoader from './EnvLoader'
 import { Collection } from 'discord.js'
 import BotClient from './BotClient'
 import fs from 'fs'
+import { Choices } from './util/EnvChoices'
 
-EnvLoader.load()
+EnvLoader.load(Choices.BOT)
 
 // Creates a client instance
 const client = new BotClient()
